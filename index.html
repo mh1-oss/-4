@@ -13,6 +13,8 @@
         <div class="head container">
             <div class="flex">
                 <div class="logo">LOGO</div>
+                <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+                <div class="nav-menu" id="navMenu">
                 <nav>
                     <a href="#">Home</a>
                     <a href="#">Articles</a>
@@ -23,6 +25,7 @@
                 <div class="auth-buttons">
                     <button class="login">Log in</button>
                     <button class="freetrial">Start Free Trial</button>
+                </div>
                 </div>
             </div>
         </div>
@@ -130,6 +133,10 @@
     targets.forEach(target => {
         observer.observe(target);
     });
+    function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('active');
+}
 
 </script>
     </main>
