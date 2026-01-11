@@ -76,7 +76,7 @@ button.login {
 button:hover {
     background-color: #0d1626;
     opacity: 0.9;
-    transform: translateY(-2px) !important;
+    transform: translateY(-2px);
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 button.login:hover{
@@ -99,6 +99,9 @@ button.login:hover{
     color: #14203E;
     cursor: pointer;
     padding: 0;
+}
+.hamburger-btn:hover{
+    background-color: white;
 }
 .nav-menu {
     display: flex;
