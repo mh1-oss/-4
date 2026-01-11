@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="head container">
             <div class="flex">
                 <div class="logo">LOGO</div>
                 <nav>
@@ -32,8 +32,9 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-text">
-                    <h1>A modern way to <br>build websites.</h1>
-                    <p>Empower designers to build professional, custom websites<br> in a completely visual canvas with no code.</p>
+                    <h1 id="typing-text"></h1>
+                    <span class="cursor">|</span>
+                    <p>Empower designers to build professional, custom websites in a completely visual canvas with no code.</p>
                     <div class="hero-buttons">
                         <button class="freetrial">Start Free Trial</button>
                     </div>
@@ -43,7 +44,7 @@
 
         <section class="line">
             <div class="line-image"></div>
-            <div class="text"><p>We share our thoughts on design</p></div>
+            <div class="lo text "><p>We share our thoughts on design</p></div>
         </section>
 
         <div class="container">
@@ -89,6 +90,48 @@
                 </div>
             </div>
         </div>
+        <script>
+        const text = `A modern way to build websites.`;
+    
+    
+    const typingElement = document.getElementById('typing-text');
+    
+    let index = 0; 
+    const speed = 100; 
+
+    function typeWriter() {
+        if (index < text.length) {
+            typingElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, speed);
+        } else {
+            document.querySelector('.cursor').style.display = 'none';
+        }
+    }
+    window.onload = typeWriter;
+
+    const observerOptions = {
+        root: null, 
+        threshold: 0.2, 
+        rootMargin: "0px"
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('start-animation');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const targets = document.querySelectorAll('.card');
+    targets.forEach(target => {
+        observer.observe(target);
+    });
+
+</script>
     </main>
     <footer></footer>
 </body>
