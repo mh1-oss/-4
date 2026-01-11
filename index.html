@@ -13,7 +13,7 @@
         <div class="head container">
             <div class="flex">
                 <div class="logo">LOGO</div>
-                <button class="hamburger-btn" onclick="toggleMenu()">☰</button>
+                <button class="hamburger-btn">☰</button>
                 <div class="nav-menu" id="navMenu">
                 <nav>
                     <a href="#">Home</a>
@@ -133,11 +133,11 @@
     targets.forEach(target => {
         observer.observe(target);
     });
-    function toggleMenu() {
-    const menu = document.getElementById('navMenu');
-    menu.classList.toggle('active');
-}
-
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const navMenu = document.getElementById('navMenu');
+    hamburgerBtn.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+});
 </script>
     </main>
     <footer></footer>
