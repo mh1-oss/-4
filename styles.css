@@ -37,10 +37,12 @@ nav a {
     color: #333;
     margin: 0 15px;
     transition: color 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 nav a:hover {
     color: #007BFF;
+    transform: translateY(-2px);
 }
 
 
@@ -52,6 +54,7 @@ button {
     border-radius: 10px;
     transition: background-color 0.3s;
     font-size: 16px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 button.freetrial {
@@ -73,6 +76,8 @@ button.login {
 button:hover {
     background-color: #0d1626;
     opacity: 0.9;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 button.login:hover{
     background-color: #e0d6ca;
@@ -85,6 +90,20 @@ button.login:hover{
     width: 100%; 
     height: auto; 
     margin-top: 20px;
+}
+.hamburger-btn {
+    display: none; 
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #14203E;
+    cursor: pointer;
+    padding: 0;
+}
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 .hero {
     display: flex;
@@ -249,6 +268,30 @@ button.login:hover{
         height: auto;      
         padding-bottom: 20px; 
     }
+    .hamburger-btn {
+        display: block; 
+    }
+
+    .nav-menu {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+        background-color: #fff; 
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+    }
+
+    
+    .nav-menu.active {
+        display: flex; 
+    }
+
+    
+    .flex {
+        flex-wrap: wrap; 
+    }
+
 }
 
 @keyframes blink {
