@@ -22,7 +22,7 @@
                     <a href="#">About</a>
                     <a href="#">Contact</a>
                 </nav></div>
-                <div class="auth-buttons">
+                <div class="auth-buttons"id='auth-buttons'>
                     <button class="login">Log in</button>
                     <button class="freetrial">Start Free Trial</button>
                 </div>
@@ -135,8 +135,11 @@
     });
     const hamburgerBtn = document.querySelector('.hamburger-btn');
     const navMenu = document.getElementById('navMenu');
+    const authButtons = document.querySelector('.auth-buttons');
     hamburgerBtn.addEventListener('click', function() {
     navMenu.classList.toggle('active');
+    hamburgerBtn.classList.toggle('active');
+    authButtons.classList.toggle('active');
 });
 </script>
     </main>
