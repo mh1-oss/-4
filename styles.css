@@ -9,7 +9,7 @@ header {
     max-height: 99px;
 }
 .logo {
-    width: 230px;
+    width: 241.68px;
     font-weight: bold;
     font-size: 24px;
     color: #14203E3D;
@@ -99,9 +99,12 @@ button.login:hover{
     color: #14203E;
     cursor: pointer;
     padding: 0;
+    margin: 20px;
 }
 .hamburger-btn:hover{
-    background-color: white;
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
 }
 .nav-menu {
     display: flex;
@@ -243,9 +246,10 @@ button.login:hover{
 
 @media (max-width: 1000px) {
     .flex {
-        flex-direction: column;
         gap: 20px;
         text-align: center;
+        justify-content: space-between;
+        margin: 0 auto;
     }
 
     nav {
@@ -256,7 +260,8 @@ button.login:hover{
     }
     
     .logo {
-        margin-bottom: 10px;
+        margin: 20px;
+        width: unset;
     }
 
     .hero h1 {
@@ -269,33 +274,64 @@ button.login:hover{
     header {
         max-height: unset; 
         height: auto;      
-        padding-bottom: 20px; 
     }
     .hamburger-btn {
         display: block; 
     }
 
-    .nav-menu {
-        display: none; 
-        flex-direction: column;
-        width: 100%;
-        margin-top: 20px;
-        background-color: #fff; 
-        padding: 20px 0;
-        border-top: 1px solid #eee;
-    }
-
-    
-    .nav-menu.active {
-        display: flex; 
-    }
-
     
     .flex {
         flex-wrap: wrap; 
+        height: unset;
+        margin: 0;
+        padding: 0;
+        gap: 0;
     }
 
+    .nav-menu, .auth-buttons {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0; 
+        border: none; 
+        transition: all 0.5s ease-in-out;
+        display: flex; 
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    
+    .nav-menu.active, .auth-buttons.active {
+        max-height: 500px;
+        opacity: 1;
+        padding: 20px 0;
+        margin-top: 20px; 
+        border-top: 1px solid #eee;
+    }
+    
+    header {
+        padding-bottom: 0; 
+    }
+    .auth-buttons button {
+        width: 100%; 
+        margin-bottom: 10px;
+        margin: 0 0 10px 0 !important;
+        display: block; 
+    }
 }
+@media (max-width: 300px) {
+    .flex{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+}
+
+
 
 @keyframes blink {
     0%, 100% { opacity: 1; }
@@ -311,6 +347,5 @@ button.login:hover{
       top: 0; 
   }
 }
-
 
 
