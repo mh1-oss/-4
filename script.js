@@ -133,8 +133,10 @@ function sumArray(arr) {
     let sum = 0;
     for (let i=0; i<arr.length; i++){
         sum += arr[i];
-    }}
+    }
     return sum;
+}
+    
 
 // 24. فنكشن تعيد متوسط أرقام المصفوفة
 function averageArray(arr) {
@@ -142,6 +144,7 @@ function averageArray(arr) {
     for(let i=0; i<arr.length; i++){
         sum += arr[i]
     }
+    return sum/arr.length;
 }
 
 // 25. فنكشن تبحث عن عنصر داخل المصفوفة وتعيد true إذا وجد
@@ -252,6 +255,7 @@ function factorial(n) {
     }
     return n * factorial(n - 1);
 }
+
 
 // 42. فنكشن تولد رقماً عشوائياً بين 1 و 10
 function randomTen() {
@@ -649,4 +653,6 @@ function toSlug(str) {
 function generateId() {
     return Math.random().toString(36).slice(2);
 }
+
+
 
